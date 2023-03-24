@@ -1,9 +1,57 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>routine-home</ion-title>
+    <ion-title>Note: edit button</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  <ion-text color="#342D2B">
+    <h1>Routine</h1>
 
+    <p>
+      Care for yourself consistently and earn rewards by following a routine and
+      goal. View your progress in Journey.
+    </p>
+  </ion-text>
+
+  <ion-segment [scrollable]="true" value="night">
+    <ion-segment-button value="day">
+      <ion-icon name="sunny-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="night">
+      <ion-icon name="moon-outline"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-text color="#342D2B">
+    <h5>
+      Remind me at 07:00 AM
+      <hr />
+      Daily
+    </h5>
+  </ion-text>
+
+  <ion-item lines="none">
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Practice self compassion meditation</ion-label>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Practice yoga for 15 min</ion-label>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>Drink a cup of water</ion-label>
+  </ion-item>
+
+  <ion-text color="#B7472A">
+    <h5>My Self Care Goal</h5>
+  </ion-text>
+
+  <ion-textarea
+    placeholder="Enter your Self Care Goals here to motivate yourself."
+    [clearOnEdit]="true"
+  ></ion-textarea>
 </ion-content>
