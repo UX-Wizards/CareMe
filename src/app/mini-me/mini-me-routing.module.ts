@@ -11,6 +11,14 @@ const routes: Routes = [
   {
     path: 'mini-me-setup',
     loadChildren: () => import('./mini-me-setup/mini-me-setup.module').then( m => m.MiniMeSetupPageModule)
+  },
+  {
+    path: 'mini-me-confirm',
+    loadChildren: () => import('./mini-me-confirm/mini-me-confirm.module').then( m => m.MiniMeConfirmPageModule)
+  },
+  {
+    path: 'mini-me-builder',
+    loadChildren: () => import('./mini-me-builder/mini-me-builder.module').then( m => m.MiniMeBuilderPageModule)
   }
 ];
 
