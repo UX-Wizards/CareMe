@@ -6,15 +6,12 @@ import { IonicModule } from '@ionic/angular';
 
 import { MiniMeConfirmPageRoutingModule } from './mini-me-confirm-routing.module';
 
-import { MiniMeConfirmPage } from './mini-me-confirm.page';
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     MiniMeConfirmPageRoutingModule
-  ],
-  declarations: [MiniMeConfirmPage]
+  ]
 })
 export class MiniMeConfirmPageModule {}

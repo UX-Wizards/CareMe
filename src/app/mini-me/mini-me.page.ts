@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import Swiper, { SwiperOptions, Pagination } from 'swiper';
+
+Swiper.use([Pagination]);
 
 @Component({
   selector: 'app-mini-me',
@@ -6,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mini-me.page.scss'],
 })
 export class MiniMePage implements OnInit {
+  config: SwiperOptions = {
+    pagination: true,
+    allowTouchMove: true
+  };
 
   constructor() { }
 
