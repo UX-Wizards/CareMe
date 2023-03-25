@@ -1,9 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>mini-me</ion-title>
-  </ion-toolbar>
+<ion-header [translucent]="true">
 </ion-header>
 
 <ion-content>
+  <swiper [config]="config">
+
+    <ng-template swiperSlide>
+      <app-mini-me-setup></app-mini-me-setup>
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <app-mini-me-builder></app-mini-me-builder>
+    </ng-template>
+
+    <ng-template swiperSlide>
+      <app-mini-me-confirm></app-mini-me-confirm>
+    </ng-template>
+
+  </swiper>
 
 </ion-content>

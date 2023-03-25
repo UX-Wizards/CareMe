@@ -6,15 +6,12 @@ import { IonicModule } from '@ionic/angular';
 
 import { MiniMeSetupPageRoutingModule } from './mini-me-setup-routing.module';
 
-import { MiniMeSetupPage } from './mini-me-setup.page';
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     MiniMeSetupPageRoutingModule
-  ],
-  declarations: [MiniMeSetupPage]
+  ]
 })
 export class MiniMeSetupPageModule {}
