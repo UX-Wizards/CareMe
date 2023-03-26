@@ -15,10 +15,10 @@
   </ion-text>
 
   <ion-segment [scrollable]="true" value="night">
-    <ion-segment-button value="day">
+    <ion-segment-button value="day" (click)="onClickDay()">
       <ion-icon name="sunny-outline"></ion-icon>
     </ion-segment-button>
-    <ion-segment-button value="night">
+    <ion-segment-button value="night" (click)="onClickNight()">
       <ion-icon name="moon-outline"></ion-icon>
     </ion-segment-button>
   </ion-segment>
