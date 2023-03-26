@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare const gtag: Function;
+
 @Component({
   selector: 'app-routine-home',
   templateUrl: './routine-home.page.html',
@@ -12,4 +14,11 @@ export class RoutineHomePage implements OnInit {
   ngOnInit() {
   }
 
+  onClickDay() {
+    gtag('event', 'select_content', {item_id: 'routine_clicked_day'})
+  }
+
+  onClickNight() {
+    gtag('event', 'select_content', {item_id: 'routine_clicked_night'})
+  }
 }
