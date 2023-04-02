@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-declare const gtag: Function;
+import { ToastController } from '@ionic/angular';
+import { AnalyticsService } from '../analytics.service';
+import { LocalStorageService, UserData } from '../storage.service';
 
 @Component({
   selector: 'app-routine-home',
@@ -8,17 +9,41 @@ declare const gtag: Function;
   styleUrls: ['./routine-home.page.scss'],
 })
 export class RoutineHomePage implements OnInit {
+  goals: string = ""
 
-  constructor() { }
+  data: UserData
+
+  constructor(private toastController: ToastController) {
+    this.data = LocalStorageService.getUserData()
+  }
 
   ngOnInit() {
+    this.data = LocalStorageService.getUserData()
+    this.goals = this.data.routine_goal
   }
 
   onClickDay() {
-    gtag('event', 'select_content', {item_id: 'routine_clicked_day'})
+    AnalyticsService.Tag('routine_clicked_day')
   }
 
   onClickNight() {
-    gtag('event', 'select_content', {item_id: 'routine_clicked_night'})
+    AnalyticsService.Tag('routine_clicked_night')
+  }
+
+  onSave() {
+    this.data.routine_goal = this.goals
+    LocalStorageService.saveUserData(this.data)
+    AnalyticsService.Tag('routine_save')
+    this.showConfirmationToast()
+  }
+
+  async showConfirmationToast() {
+    const toast = await this.toastController.create({
+      message: 'Content saved',
+      duration: 1500,
+      position: 'bottom'
+    });
+
+    await toast.present();
   }
 }
