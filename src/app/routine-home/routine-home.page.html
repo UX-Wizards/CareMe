@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button>Edit</ion-button>
+    </ion-buttons>
     <ion-title>Note: edit button</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -53,5 +56,10 @@
   <ion-textarea
     placeholder="Enter your Self Care Goals here to motivate yourself."
     [clearOnEdit]="true"
+    [(ngModel)]="goals"
   ></ion-textarea>
+
+  <ion-button (click)="onSave()">
+    Save
+  </ion-button>
 </ion-content>
