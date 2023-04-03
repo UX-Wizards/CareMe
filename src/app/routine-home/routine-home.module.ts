@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { RoutineHomePageRoutingModule } from './routine-home-routing.module';
 
 import { RoutineHomePage } from './routine-home.page';
+import { RoutineEditPage } from '../routine-home/routine-edit/routine-edit.page';
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import { RoutineHomePage } from './routine-home.page';
     IonicModule,
     RoutineHomePageRoutingModule
   ],
-  declarations: [RoutineHomePage]
+  declarations: [
+    RoutineHomePage,
+    RoutineEditPage
+  ]
 })
 export class RoutineHomePageModule {}

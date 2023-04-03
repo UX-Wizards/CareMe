@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ToastController, IonModal } from '@ionic/angular';
 import { AnalyticsService } from '../analytics.service';
 import { LocalStorageService, UserData } from '../storage.service';
 
@@ -9,7 +9,7 @@ import { LocalStorageService, UserData } from '../storage.service';
   styleUrls: ['./routine-home.page.scss'],
 })
 export class RoutineHomePage implements OnInit {
-  goals: string = ""
+  @ViewChild(IonModal) modal?: IonModal
 
   data: UserData
 
@@ -19,7 +19,6 @@ export class RoutineHomePage implements OnInit {
 
   ngOnInit() {
     this.data = LocalStorageService.getUserData()
-    this.goals = this.data.routine_goal
   }
 
   onClickDay() {
@@ -30,10 +29,11 @@ export class RoutineHomePage implements OnInit {
     AnalyticsService.Tag('routine_clicked_night')
   }
 
-  onSave() {
-    this.data.routine_goal = this.goals
+  onSave(goals: string) {
+    this.data.routine_goal = goals
     LocalStorageService.saveUserData(this.data)
     AnalyticsService.Tag('routine_save')
+    this.modal?.dismiss()
     this.showConfirmationToast()
   }
 
@@ -44,6 +44,10 @@ export class RoutineHomePage implements OnInit {
       position: 'bottom'
     });
 
-    await toast.present();
+    await toast.present()
+  }
+
+  onCancel() {
+    this.modal?.dismiss()
   }
 }

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button>Edit</ion-button>
+      <ion-button id="open-modal">Edit</ion-button>
     </ion-buttons>
     <ion-title>Note: edit button</ion-title>
   </ion-toolbar>
@@ -52,14 +52,15 @@
   <ion-text color="#B7472A">
     <h5>My Self Care Goal</h5>
   </ion-text>
-
-  <ion-textarea
-    placeholder="Enter your Self Care Goals here to motivate yourself."
-    [clearOnEdit]="true"
-    [(ngModel)]="goals"
-  ></ion-textarea>
-
-  <ion-button (click)="onSave()">
-    Save
-  </ion-button>
+  
 </ion-content>
+
+<ion-modal trigger="open-modal">
+  <ng-template>
+    <app-routine-edit
+    [data]="data"
+    (cancelChanges)="onCancel()"
+    (saveChanges)="onSave($event)"
+    ></app-routine-edit>
+  </ng-template>
+</ion-modal>
