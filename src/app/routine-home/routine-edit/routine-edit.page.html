@@ -9,10 +9,48 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-textarea
+<ion-segment [scrollable]="true" value="night">
+  <ion-segment-button value="day">
+    <ion-icon name="sunny-outline"></ion-icon>
+  </ion-segment-button>
+  <ion-segment-button value="night">
+    <ion-icon name="moon-outline"></ion-icon>
+  </ion-segment-button>
+</ion-segment>
+
+Remind me at
+<ion-datetime presentation="time"></ion-datetime>
+
+<p>
+  Frequency
+</p>
+<ion-grid>
+  <ion-row>
+    <ion-col>S</ion-col>
+    <ion-col>M</ion-col>
+    <ion-col>T</ion-col>
+    <ion-col>W</ion-col>
+    <ion-col>Th</ion-col>
+    <ion-col>F</ion-col>
+    <ion-col>Sa</ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-item>
+  <ion-icon name="remove-circle-outline" slot="start"></ion-icon>
+  <ion-input placeholder="Enter routine"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+  <ion-label>Add new self care activity</ion-label>
+</ion-item>
+
+<p>
+  My self care goals
+</p>
+<ion-textarea
   placeholder="Enter your Self Care Goals here to motivate yourself."
   [clearOnEdit]="true"
   [(ngModel)]="goals"
-  ></ion-textarea>
-</ion-content>
+></ion-textarea>
