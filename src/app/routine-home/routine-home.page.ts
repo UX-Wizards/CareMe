@@ -11,6 +11,8 @@ import { LocalStorageService, UserData } from '../storage.service';
 export class RoutineHomePage implements OnInit {
   @ViewChild(IonModal) modal?: IonModal
 
+  day_night_select: string = 'night'
+
   data: UserData
 
   constructor(private toastController: ToastController) {
@@ -29,22 +31,13 @@ export class RoutineHomePage implements OnInit {
     AnalyticsService.Tag('routine_clicked_night')
   }
 
-  onSave(goals: string) {
-    this.data.routine_goal = goals
+  onSave(new_data: UserData) {
+    this.data.routine_goal = new_data.routine_goal
+    this.data.day_routines = [...new_data.day_routines]
+    this.data.night_routines = [...new_data.night_routines]
     LocalStorageService.saveUserData(this.data)
     AnalyticsService.Tag('routine_save')
     this.modal?.dismiss()
-    this.showConfirmationToast()
-  }
-
-  async showConfirmationToast() {
-    const toast = await this.toastController.create({
-      message: 'Content saved',
-      duration: 1500,
-      position: 'bottom'
-    });
-
-    await toast.present()
   }
 
   onCancel() {

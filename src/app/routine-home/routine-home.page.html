@@ -17,7 +17,7 @@
     </p>
   </ion-text>
 
-  <ion-segment [scrollable]="true" value="night">
+  <ion-segment [scrollable]="true" [(ngModel)]="day_night_select">
     <ion-segment-button value="day" (click)="onClickDay()">
       <ion-icon name="sunny-outline"></ion-icon>
     </ion-segment-button>
@@ -34,25 +34,26 @@
     </h5>
   </ion-text>
 
-  <ion-item lines="none">
-    <ion-checkbox slot="start"></ion-checkbox>
-    <ion-label>Practice self compassion meditation</ion-label>
-  </ion-item>
+  <div *ngIf="day_night_select == 'night'">
+    <ion-item *ngFor="let routine of this.data.night_routines" lines="none">
+      <ion-checkbox slot="start"></ion-checkbox>
+      <ion-label>{{ routine }}</ion-label>
+    </ion-item>
+  </div>
 
-  <ion-item lines="none">
-    <ion-checkbox slot="start"></ion-checkbox>
-    <ion-label>Practice yoga for 15 min</ion-label>
-  </ion-item>
-
-  <ion-item lines="none">
-    <ion-checkbox slot="start"></ion-checkbox>
-    <ion-label>Drink a cup of water</ion-label>
-  </ion-item>
+  <div *ngIf="day_night_select == 'day'">
+    <ion-item *ngFor="let routine of this.data.day_routines" lines="none">
+      <ion-checkbox slot="start"></ion-checkbox>
+      <ion-label>{{ routine }}</ion-label>
+    </ion-item>
+  </div>
 
   <ion-text color="#B7472A">
     <h5>My Self Care Goal</h5>
   </ion-text>
-  
+
+  {{data.routine_goal}}
+
 </ion-content>
 
 <ion-modal trigger="open-modal">

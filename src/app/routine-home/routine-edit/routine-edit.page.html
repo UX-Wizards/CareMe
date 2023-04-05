@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-segment [scrollable]="true" value="night">
+<ion-segment [scrollable]="true" [(ngModel)]="day_night_select">
   <ion-segment-button value="day">
     <ion-icon name="sunny-outline"></ion-icon>
   </ion-segment-button>
@@ -36,13 +36,22 @@ Remind me at
   </ion-row>
 </ion-grid>
 
-<ion-item>
-  <ion-icon name="remove-circle-outline" slot="start"></ion-icon>
-  <ion-input placeholder="Enter routine"></ion-input>
-</ion-item>
+<div *ngIf="day_night_select == 'day'">
+  <ion-item *ngFor="let routine of day_routines; index as i;">
+    <ion-icon name="remove-circle-outline" slot="start" (click)="deleteRoutine(i)"></ion-icon>
+    <ion-input placeholder="Enter routine" [(ngModel)]="routine.singleton"></ion-input>
+  </ion-item>
+</div>
+
+<div *ngIf="day_night_select == 'night'">
+  <ion-item *ngFor="let routine of night_routines; index as i;">
+    <ion-icon name="remove-circle-outline" slot="start" (click)="deleteRoutine(i)"></ion-icon>
+    <ion-input placeholder="Enter routine" [(ngModel)]="routine.singleton"></ion-input>
+  </ion-item>
+</div>
 
 <ion-item>
-  <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+  <ion-icon name="add-circle-outline" slot="start" (click)="addRoutine()"></ion-icon>
   <ion-label>Add new self care activity</ion-label>
 </ion-item>
 
@@ -52,5 +61,5 @@ Remind me at
 <ion-textarea
   placeholder="Enter your Self Care Goals here to motivate yourself."
   [clearOnEdit]="true"
-  [(ngModel)]="goals"
+  [(ngModel)]="routine_goal"
 ></ion-textarea>
