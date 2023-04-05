@@ -3,8 +3,7 @@ import { Injectable } from '@angular/core'
 const PROFILE_KEY = 'profile'
 
 class MiniMe {
-  hair_color?: string
-  face_shape?: string
+
 }
 
 export class UserData {
@@ -12,7 +11,6 @@ export class UserData {
   version: number = 1
   night_routines: Array<string> = []
   day_routines: Array<string> = []
-  intentions: Array<string> = []
   routine_goal: string = ''
   minime: MiniMe = {}
 
@@ -34,9 +32,7 @@ export class LocalStorageService {
 
   public static getUserData(): UserData {
     const data = localStorage.getItem(PROFILE_KEY)
-    // TODO: We're always returning an empty one until schema is stabilized
-    return new UserData()
-    // return data ? JSON.parse(data) : new UserData()
+    return data ? JSON.parse(data) : new UserData()
   }
 
   public static clearData() {
