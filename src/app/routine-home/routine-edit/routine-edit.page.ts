@@ -1,9 +1,5 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
-import { UserData } from 'src/app/storage.service';
-
-class RoutineSingleton {
-  singleton: string = ''
-}
+import { RoutineElement, UserData } from 'src/app/storage.service';
 
 @Component({
   selector: 'app-routine-edit',
@@ -17,8 +13,8 @@ export class RoutineEditPage {
 
   day_night_select: string = "night"
 
-  night_routines: Array<RoutineSingleton> = [{singleton: ''}]
-  day_routines: Array<RoutineSingleton> = [{singleton: ''}]
+  night_routines: Array<RoutineElement> = [{label: '', is_done: false}]
+  day_routines: Array<RoutineElement> = [{label: '', is_done: false}]
   routine_goal: string = ""
 
   shadow_data: UserData = new UserData() // Use this to move routine data
@@ -29,15 +25,15 @@ export class RoutineEditPage {
     this.routine_goal = this.data.routine_goal
 
     if (this.data.night_routines.length == 0) {
-      this.night_routines = [{singleton: ''}]
+      this.night_routines = [{label: '', is_done: false}]
     } else {
-      this.night_routines = this.data.night_routines.map(x => <RoutineSingleton>{singleton: x})
+      this.night_routines = this.data.night_routines.map(x => x)
     }
 
     if (this.data.day_routines.length == 0) {
-      this.day_routines = [{singleton: ''}]
+      this.day_routines = [{label: '', is_done: false}]
     } else {
-      this.day_routines = this.data.day_routines.map(x => <RoutineSingleton>{singleton: x})
+      this.day_routines = this.data.day_routines.map(x => x)
     }
   }
 
@@ -46,17 +42,17 @@ export class RoutineEditPage {
   }
 
   onSave() {
-    this.shadow_data.night_routines = this.night_routines.map(x => x.singleton).filter(x => x != '')
-    this.shadow_data.day_routines = this.day_routines.map(x => x.singleton)
+    this.shadow_data.night_routines = this.night_routines.filter(x => x.label != '')
+    this.shadow_data.day_routines = this.day_routines.filter(x => x.label != '')
     this.shadow_data.routine_goal = this.routine_goal
     this.saveChanges.emit(this.shadow_data)
   }
 
   addRoutine() {
     if (this.day_night_select == 'night') {
-      this.night_routines.push({singleton: ''})
+      this.night_routines.push({label: '', is_done: false})
     } else {
-      this.day_routines.push({singleton: ''})
+      this.day_routines.push({label: '', is_done: false})
     }
   }
 
