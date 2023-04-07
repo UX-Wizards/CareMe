@@ -1,27 +1,35 @@
+:root {
+    --ion-font-family: -apple-system, "SF Pro", Roboto, Arial, BlinkMacSystemFont, sans-serif !important;
+}
+
 h1 {
-    font-size: 29px;
-    font-weight: bold;
+    font-size: 29px !important;
+    font-weight: bold !important;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 24px !important;
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 20px !important;
 }
 
 h4 {
-    font-size: 17px;
-    font-weight: 600;
+    font-size: 17px !important;
+    font-weight: 600 !important;
 }
 
 h5 {
-    font-size: 17px;
+    font-size: 17px !important;
 }
 
 p {
-    font-size: 12px;
+    font-size: 12px !important;
+}
+
+caption {
+    font-size: 10px !important;
 }
 
 /* Swiper cutom styles */
