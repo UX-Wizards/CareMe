@@ -19,7 +19,9 @@ export class RoutineHomePage implements OnInit {
     this.data = LocalStorageService.getUserData()
   }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  ngAfterViewInit() {
     this.data = LocalStorageService.getUserData()
   }
 
@@ -29,6 +31,16 @@ export class RoutineHomePage implements OnInit {
 
   onClickNight() {
     AnalyticsService.Tag('routine_clicked_night')
+  }
+
+  onCheckboxChange(i: number) {
+    if (this.day_night_select == 'night') {
+      this.data.night_routines[i].is_done = !this.data.night_routines[i].is_done
+      LocalStorageService.saveUserData(this.data)
+    } else {
+      this.data.day_routines[i].is_done = !this.data.day_routines[i].is_done
+      LocalStorageService.saveUserData(this.data)
+    }
   }
 
   onSave(new_data: UserData) {

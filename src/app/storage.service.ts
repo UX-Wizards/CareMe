@@ -6,12 +6,20 @@ class MiniMe {
 
 }
 
+export class RoutineElement {
+  label: string = ''
+  is_done: boolean = false
+}
+
 export class UserData {
   // Everytime we bump the version number, we're going to flush the data
   version: number = 1
-  night_routines: Array<string> = []
-  day_routines: Array<string> = []
+  night_routines: Array<RoutineElement> = []
+  day_routines: Array<RoutineElement> = []
   routine_goal: string = ''
+  day_streak: number = 0
+  total_routines: number = 0
+  last_completion_date_epoch_ms: number = 0
   minime: MiniMe = {}
 
   isEmpty(): boolean {

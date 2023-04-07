@@ -26,10 +26,10 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        9<br>Days Practiced
+        {{ data.day_streak || 0 }}<br>Day{{ data.day_streak != 1 ? 's' : ''}} Practiced
       </ion-col>
       <ion-col>
-        138<br>Routines Completed
+        {{ data.total_routines || 0 }}<br>Routine{{ data.total_routines != 1 ? 's' : ''}} Completed
       </ion-col>
     </ion-row>
   </ion-grid>

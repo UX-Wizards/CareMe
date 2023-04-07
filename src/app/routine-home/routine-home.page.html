@@ -42,16 +42,16 @@
   </ion-text>
 
   <div *ngIf="day_night_select == 'night'">
-    <ion-item *ngFor="let routine of this.data.night_routines" lines="none">
-      <ion-checkbox slot="start"></ion-checkbox>
-      <ion-label>{{ routine }}</ion-label>
+    <ion-item *ngFor="let routine of this.data.night_routines; index as i;" lines="none">
+      <ion-checkbox slot="start" [checked]="routine.is_done" (ionChange)="onCheckboxChange(i)"></ion-checkbox>
+      <ion-label>{{ routine.label }}</ion-label>
     </ion-item>
   </div>
 
   <div *ngIf="day_night_select == 'day'">
-    <ion-item *ngFor="let routine of this.data.day_routines" lines="none">
-      <ion-checkbox slot="start"></ion-checkbox>
-      <ion-label>{{ routine }}</ion-label>
+    <ion-item *ngFor="let routine of this.data.day_routines; index as i;" lines="none">
+      <ion-checkbox slot="start" [checked]="routine.is_done" (ionChange)="onCheckboxChange(i)"></ion-checkbox>
+      <ion-label>{{ routine.label }}</ion-label>
     </ion-item>
   </div>
 
