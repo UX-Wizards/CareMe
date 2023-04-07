@@ -1,0 +1,30 @@
+h1 {
+    font-size: 29px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 17px;
+}
+
+p {
+    font-size: 12px;
+}
+
+/* Swiper cutom styles */
+.swiper-pagination-bullet-active {
+    background: #b7472a !important;
+}
