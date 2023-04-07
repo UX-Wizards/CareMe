@@ -29,10 +29,10 @@
 @import 'swiper/scss';
 @import 'swiper/scss/pagination';
 
+/* CareMe CSS */
+@import "assets/css/careme.css";
+
 /* Tailwind files */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-
-/* CareMe CSS */
-@import "assets/css/careme.css";
