@@ -1,0 +1,45 @@
+:root {
+    --ion-font-family: -apple-system, "SF Pro", Roboto, Arial, BlinkMacSystemFont, sans-serif !important;
+}
+
+h1 {
+    font-size: 29px !important;
+    font-weight: bold !important;
+    color: #342D2B;
+}
+
+h2 {
+    font-size: 24px !important;
+    color: #342D2B;
+}
+
+h3 {
+    font-size: 20px !important;
+    color: #342D2B;
+}
+
+h4 {
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    color: #342D2B;
+}
+
+h5 {
+    font-size: 17px !important;
+    color: #595453;
+}
+
+p {
+    font-size: 12px !important;
+    color: #595453;
+}
+
+p.caption {
+    font-size: 10px !important;
+    color: #595453;
+}
+
+/* Swiper cutom styles */
+.swiper-pagination-bullet-active {
+    background: #b7472a !important;
+}
