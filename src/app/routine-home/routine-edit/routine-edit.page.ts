@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { AnalyticsService } from 'src/app/analytics.service';
 import { RoutineElement, UserData } from 'src/app/storage.service';
 
 @Component({
@@ -62,6 +63,7 @@ export class RoutineEditPage {
     } else {
       this.day_routines.splice(i, 1)
     }
+    AnalyticsService.Tag('routine_delete')
   }
 
 }

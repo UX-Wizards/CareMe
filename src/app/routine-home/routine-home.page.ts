@@ -25,6 +25,10 @@ export class RoutineHomePage implements OnInit {
     this.data = LocalStorageService.getUserData()
   }
 
+  ionViewWillEnter() {
+    AnalyticsService.Tag('routine_home_page_load')
+  }
+
   onClickDay() {
     AnalyticsService.Tag('routine_clicked_day')
   }
@@ -41,6 +45,7 @@ export class RoutineHomePage implements OnInit {
       this.data.day_routines[i].is_done = !this.data.day_routines[i].is_done
       LocalStorageService.saveUserData(this.data)
     }
+    AnalyticsService.Tag('routine_checked')
   }
 
   onSave(new_data: UserData) {
