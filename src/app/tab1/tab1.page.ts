@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from "@ionic/angular";
 import { LocalStorageService, UserData } from '../storage.service';
+import { AnalyticsService } from '../analytics.service';
 
 const MS_IN_DAY: number = 24 * 60 * 60 * 1000
 
@@ -23,6 +24,7 @@ export class Tab1Page {
   ionViewWillEnter() {
     this.data = LocalStorageService.getUserData()
     this.updateJourneyCounter(new Date())
+    AnalyticsService.Tag('journey_page_load')
   }
 
   // TODO: In theory, this should be run any time you open the app, not this view/tab
@@ -32,7 +34,11 @@ export class Tab1Page {
     now.setSeconds(0)
     now.setMilliseconds(0)
     let nowMillis = now.getTime()
-    let lastMillis = this.data.last_completion_date_epoch_ms || 0
+    let lastMillis = this.data.last_completion_date_epoch_ms
+    if (!lastMillis) {
+      this.data.last_completion_date_epoch_ms = nowMillis
+      LocalStorageService.saveUserData(this.data)
+    }
 
     if (nowMillis - lastMillis == MS_IN_DAY * 2) {
       this.data.day_streak = 0
