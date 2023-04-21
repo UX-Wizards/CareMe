@@ -1,24 +1,15 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="none">
     <ion-buttons slot="end">
       <ion-button id="open-modal">Edit</ion-button>
     </ion-buttons>
-    <ion-title>Note: edit button</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-text color="#342D2B">
-    <h1>
-      <p class="text-3xl text-center font-bold ">Routine</p>
-      <div class="pb-4"></div>
-    </h1>
-
-    <p class="text-center text-base font-normal pb-4">
-      Care for yourself consistently and earn rewards by following a routine and
-      goal. View your progress in Journey.
-    </p>
-  </ion-text>
+  <h1 class="text-center mb-2">Routine</h1>
+  <h5 class="text-center ml-5 mr-5 mb-10">Care for yourself consistently and earn rewards by following a routine and
+    goal. View your progress in Journey.</h5>
 
   <ion-segment [scrollable]="true" [(ngModel)]="day_night_select">
     <ion-segment-button value="day" (click)="onClickDay()">
@@ -30,15 +21,13 @@
   </ion-segment>
 
   <ion-text color="#342D2B">
-    <h5>
-      <p class="text-center font-semibold text-base">
+    <h4 class="text-center font-semibold text-base mt-2">
       Remind me at 07:00 AM
-    </p>
-      <hr />
-      <p class="text-center font-semibold text-base">
+    </h4>
+
+    <h4 class="text-center font-semibold text-base mb-4">
       Daily
-    </p>
-    </h5>
+    </h4>
   </ion-text>
 
   <div *ngIf="day_night_select == 'night'">
@@ -55,11 +44,15 @@
     </ion-item>
   </div>
 
+    <h4 class="text-center text-primary-default">
+      My Self Care Goal
+    </h4>
+
   <ion-text color="#B7472A">
-    <h5>My Self Care Goal</h5>
+    <h5 class="text-center mt-2 ml-5 mr-5 mb-10">{{data.routine_goal}}</h5>
   </ion-text>
 
-  {{data.routine_goal}}
+  
 
 </ion-content>
 
