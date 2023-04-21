@@ -23,54 +23,35 @@
     </ion-segment>
   </div>
 
-  <h4 class="text-center mb-1">Remind me at</h4>
+  <div class="pt-4">
+    <h4 class="text-center mb-1">Remind me at</h4>
 
-  <ion-datetime-button datetime="datetime" class="mb-5"></ion-datetime-button>
-  <ion-modal [keepContentsMounted]="true">
-    <ng-template>
-      <ion-datetime id="datetime" presentation="time"></ion-datetime>
-    </ng-template>
-  </ion-modal>
+    <ion-datetime-button datetime="datetime" class="mb-5"></ion-datetime-button>
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime" presentation="time"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+  </div>
 
   <h4 class="text-center mb-1">Frequency</h4>
-</ion-content>
 
-------------------------- old code -------------------------
-<div class="flex flex-col space-y-4">
-  <div></div>
-  Remind me at
-  <ion-datetime presentation="time"></ion-datetime>
-
-  <p>Frequency</p>
   <ion-grid>
     <ion-row>
-      <ion-col>S</ion-col>
-      <ion-col>M</ion-col>
-      <ion-col>T</ion-col>
-      <ion-col>W</ion-col>
-      <ion-col>Th</ion-col>
-      <ion-col>F</ion-col>
-      <ion-col>Sa</ion-col>
+      <ion-col><ion-button size="small">S</ion-button></ion-col>
+      <ion-col><ion-button size="small">M</ion-button></ion-col>
+      <ion-col><ion-button size="small">T</ion-button></ion-col>
+      <ion-col><ion-button size="small">W</ion-button></ion-col>
+      <ion-col><ion-button size="small">T</ion-button></ion-col>
+      <ion-col><ion-button size="small">F</ion-button></ion-col>
+      <ion-col><ion-button size="small">S</ion-button></ion-col>
     </ion-row>
   </ion-grid>
-
-  <div *ngIf="day_night_select == 'day'">
-    <ion-item *ngFor="let routine of day_routines; index as i;">
-      <ion-icon
-        name="remove-circle-outline"
-        slot="start"
-        (click)="deleteRoutine(i)"
-      ></ion-icon>
-      <ion-input
-        placeholder="Enter routine"
-        [(ngModel)]="routine.label"
-      ></ion-input>
-    </ion-item>
-  </div>
 
   <div *ngIf="day_night_select == 'night'">
     <ion-item *ngFor="let routine of night_routines; index as i;">
       <ion-icon
+        class="text-primary-default bigger"
         name="remove-circle-outline"
         slot="start"
         (click)="deleteRoutine(i)"
@@ -84,6 +65,7 @@
 
   <ion-item>
     <ion-icon
+      class="text-primary-default plusbutton"
       name="add-circle-outline"
       slot="start"
       (click)="addRoutine()"
@@ -91,10 +73,10 @@
     <ion-label>Add new self care activity</ion-label>
   </ion-item>
 
-  <p>My self care goals</p>
+  <h4 class="text-center text-primary-default">My Self Care Goal</h4>
   <ion-textarea
     placeholder="Enter your Self Care Goals here to motivate yourself."
     [clearOnEdit]="true"
     [(ngModel)]="routine_goal"
   ></ion-textarea>
-</div>
+</ion-content>
