@@ -8,7 +8,7 @@ import { SwiperOptions } from 'swiper';
   styleUrls: ['./mini-me-builder.page.scss'],
 })
 export class MiniMeBuilderPage implements OnInit {
-  @ViewChild('builder') swiperBuilder?: SwiperComponent
+  @ViewChild('menu') swiperMenu?: SwiperComponent
   @ViewChild('selections') swiperSelection?: SwiperComponent
   @Output() nextSlide = new EventEmitter<any>()
   menuConfig: SwiperOptions = {
@@ -16,8 +16,7 @@ export class MiniMeBuilderPage implements OnInit {
     centeredSlides: true
   }
   selectionConfig: SwiperOptions = {
-    pagination: false,
-    allowTouchMove: false
+    pagination: false
   }
   swiper: any
   currentIndex?: number
@@ -36,18 +35,28 @@ export class MiniMeBuilderPage implements OnInit {
   }
 
   slideTo(i: number) {
-    this.swiperBuilder?.swiperRef.slideTo(i)
-    this.currentIndex = this.swiperBuilder?.swiperRef.activeIndex
+    this.swiperMenu?.swiperRef.slideTo(i)
+    this.currentIndex = this.swiperMenu?.swiperRef.activeIndex
   }
 
-  onActiveIndexChange() {
-    this.currentIndex = this.swiperBuilder?.swiperRef.activeIndex
-    this.slideToSelection(this.swiperBuilder?.swiperRef.activeIndex)
+  onMenuIndexChange() {
+    this.currentIndex = this.swiperMenu?.swiperRef.activeIndex
+    this.slideToSelection(this.swiperMenu?.swiperRef.activeIndex)
+  }
+
+  onSelectionIndexChange() {
+    this.currentIndex = this.swiperSelection?.swiperRef.activeIndex
+    this.slideToMenu(this.swiperSelection?.swiperRef.activeIndex)
   }
 
   slideToSelection(i: any) {
     this.swiperSelection?.swiperRef.slideTo(i);
-    this.currentIndex = this.swiperBuilder?.swiperRef.activeIndex
+    this.currentIndex = this.swiperMenu?.swiperRef.activeIndex
+  }
+
+  slideToMenu(i: any) {
+    this.swiperMenu?.swiperRef.slideTo(i);
+    this.currentIndex = this.swiperSelection?.swiperRef.activeIndex
   }
 
 }
