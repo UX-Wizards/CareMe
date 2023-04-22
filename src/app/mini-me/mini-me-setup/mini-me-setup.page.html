@@ -22,25 +22,27 @@
 
     <ion-button><h4 style="color: white;">Let's do it</h4></ion-button></ion-row> -->
 
-<ion-content>
-<ion-grid style="height: 100%;">
-  <ion-row style="background-color: white; height: 30%;">
-    <ion-col><h1 class="text-center">Set Up Mini Me</h1>
-      <ion-row style="height: 16px"></ion-row>
-      <h3 class="text-center ml-4 mr-4">Shall we create a Mini Me to 
-        cheer for you and others in your
-        self-care journey?</h3></ion-col>
-  </ion-row>
-  <ion-row style="background-color: rgb(241, 241, 241); height: 50%;">
-    <ion-col><ion-img class="ml-7 mr-7 mb-10" src="./assets/avataaars/justina.svg"></ion-img></ion-col>
-  </ion-row>
-  <ion-row style="background-color: white; height: 5%;">
-    <ion-col class="text-center"></ion-col>
-  </ion-row>
-
-  <ion-row style="background-color: white; height: 15%;">
-    <ion-col class="text-center"><ion-button width="170px"><h4 style="color: white;">Let's do it</h4></ion-button></ion-col>
-  </ion-row>
-</ion-grid>
-
-</ion-content>
+    <ion-content>
+      <ion-grid style="height: 100%;">
+        <ion-row style="background-color: white; height: 30%;">
+          <ion-col><h1 class="text-center">Set Up Mini Me</h1>
+            <ion-row style="height: 16px"></ion-row>
+            <h3 class="text-center ml-4 mr-4">Shall we create a Mini Me to 
+              cheer for you and others in your
+              self-care journey?</h3></ion-col>
+        </ion-row>
+        <ion-row style="background-color: rgb(241, 241, 241); height: 50%;">
+          <ion-col><ion-img class="ml-7 mr-7 mb-10" src="./assets/avataaars/justina.svg"></ion-img></ion-col>
+        </ion-row>
+        <ion-row style="background-color: white; height: 5%;">
+          <ion-col class="text-center"></ion-col>
+        </ion-row>
+      
+        <ion-row style="background-color: white; height: 15%;">
+          <ion-col class="text-center">
+            <ion-button (click)="slideNext()" width="170px"><h4 style="color: white;">Let's do it</h4></ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+      </ion-content>

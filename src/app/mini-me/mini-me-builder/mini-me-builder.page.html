@@ -2,37 +2,93 @@
 
 <ion-content>
   <ion-grid style="height: 100%;">
-    <ion-row style="background-color: white; height: 10%;">
+    <ion-row style="background-color: white; height: 6%;">
       <ion-col><h1 class="text-center">Set Up Mini Me</h1>
         <ion-row style="height: 16px"></ion-row>
       </ion-col>
     </ion-row>
-    <ion-row style="background-color: rgb(241, 241, 241); height: 30%;">
+    <ion-row style="background-color: rgb(241, 241, 241); height: 48%;">
       <ion-col><ion-img class="ml-[15%] mr-[15%]" src="./assets/avataaars/justina.svg"></ion-img></ion-col>
     </ion-row>
-    <ion-row style="background-color: white; height: 20%;">
-      <ion-col class="text-center"></ion-col>
+    <ion-row style="background-color: white; height: 6%;">
+      <ion-col class="text-center">
+        <swiper #builder [config]="menuConfig" (swiper)="onSwiper($event)" (activeIndexChange)="onActiveIndexChange()">
+          <ng-template swiperSlide>
+            <div class="text-center" [ngClass]="{'active': currentIndex == 0, 'inactive': currentIndex !== 0}" (click)="slideTo(0)">Skin Color</div>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="text-center" [ngClass]="{'active': currentIndex == 1, 'inactive': currentIndex !== 1}" (click)="slideTo(1)">Hair</div>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="text-center" [ngClass]="{'active': currentIndex == 2, 'inactive': currentIndex !== 2}" (click)="slideTo(2)">Hair Color</div>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="text-center" [ngClass]="{'active': currentIndex == 3, 'inactive': currentIndex !== 3}" (click)="slideTo(3)">Eyes</div>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="text-center" [ngClass]="{'active': currentIndex == 4, 'inactive': currentIndex !== 4}" (click)="slideTo(4)">Eye Color</div>
+          </ng-template>
+        </swiper>
+      </ion-col>
     </ion-row>
-
-    <ion-row style="background-color: white; height: 10%;" class="ml-4 mr-4">
-      <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12" color="white"></ion-icon></ion-col>
-      <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
-      <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
-      <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
-      <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
-    </ion-row>
-    <ion-row style="background-color: white; height: 10%;" class="ml-4 mr-4">
-      <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
-      <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
-      <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
-      <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
-      <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+    <ion-row style="background-color: white; height: 20%;" class="ml-4 mr-4">
+      <swiper #selections [config]="selectionConfig">
+        <ng-template swiperSlide>
+          <!-- Skin Color -->
+          <ion-grid>
+            <ion-row>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+            </ion-row>
+          </ion-grid>
+        </ng-template>
+        <ng-template swiperSlide>
+          <!-- Hair -->
+          <ion-grid>
+            <ion-row>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+              <ion-col><ion-icon name="heart-circle-outline" class="h-12 w-12"></ion-icon></ion-col>
+            </ion-row>
+          </ion-grid>
+        </ng-template>
+        <ng-template swiperSlide>
+          <!-- Hair Color -->
+        </ng-template>
+        <ng-template swiperSlide>
+          <!-- Eyes -->
+        </ng-template>
+        <ng-template swiperSlide>
+          <!-- Eye Color -->
+        </ng-template>
+      </swiper>
     </ion-row>
     <ion-row style="background-color: white; height: 5%;">
       <ion-col class="text-center"></ion-col>
     </ion-row>
     <ion-row style="background-color: white; height: 15%;">
-      <ion-col class="text-center"><ion-button><h4 style="color: white;">Let's do it</h4></ion-button></ion-col>
+      <ion-col class="text-center">
+        <ion-button (click)="slideNext()"><h4 style="color: white;">Let's do it</h4></ion-button>
+      </ion-col>
     </ion-row>
   </ion-grid>
   
