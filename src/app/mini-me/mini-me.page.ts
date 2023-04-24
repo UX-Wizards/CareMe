@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import Swiper, { SwiperOptions, Pagination } from 'swiper';
+import { SwiperComponent } from "swiper/angular";
+import { NavController } from "@ionic/angular";
 
-Swiper.use([Pagination]);
+Swiper.use([Pagination])
 
 @Component({
   selector: 'app-mini-me',
@@ -11,12 +13,24 @@ Swiper.use([Pagination]);
 export class MiniMePage implements OnInit {
   config: SwiperOptions = {
     pagination: true,
-    allowTouchMove: true
-  };
+    allowTouchMove: false
+  }
+  @ViewChild('swiper') swiper?: SwiperComponent
+  currentIndex?: number
 
-  constructor() { }
+  constructor(private navController: NavController,) { }
 
   ngOnInit() {
+  }
+
+  slideNext() {
+    this.swiper?.swiperRef.slideNext(200)
+    this.currentIndex = this.swiper?.swiperRef.activeIndex
+  }
+
+  slidePrev() {
+    this.swiper?.swiperRef.slidePrev(200)
+    this.currentIndex = this.swiper?.swiperRef.activeIndex
   }
 
 }
