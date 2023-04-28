@@ -48,6 +48,21 @@
     </ion-row>
   </ion-grid>
 
+  <div *ngIf="day_night_select == 'day'">
+    <ion-item *ngFor="let routine of day_routines; index as i;">
+      <ion-icon
+        class="text-primary-default bigger"
+        name="remove-circle-outline"
+        slot="start"
+        (click)="deleteRoutine(i)"
+      ></ion-icon>
+      <ion-input
+        placeholder="Enter routine"
+        [(ngModel)]="routine.label"
+      ></ion-input>
+    </ion-item>
+  </div>
+  
   <div *ngIf="day_night_select == 'night'">
     <ion-item *ngFor="let routine of night_routines; index as i;">
       <ion-icon
