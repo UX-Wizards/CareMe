@@ -8,8 +8,10 @@
 
 <ion-content class="ion-padding">
   <h1 class="text-center mb-2">Routine</h1>
-  <h5 class="text-center ml-5 mr-5 mb-10">Care for yourself consistently and earn rewards by following a routine and
-    goal. View your progress in Journey.</h5>
+  <h5 class="text-center ml-5 mr-5 mb-10">
+    Care for yourself consistently and earn rewards by following a routine and
+    goal. View your progress in Journey.
+  </h5>
 
   <ion-segment [scrollable]="true" [(ngModel)]="day_night_select">
     <ion-segment-button value="day" (click)="onClickDay()">
@@ -25,43 +27,51 @@
       Remind me at 07:00 AM
     </h4>
 
-    <h4 class="text-center font-semibold text-base mb-4">
-      Daily
-    </h4>
+    <h4 class="text-center font-semibold text-base mb-4">Daily</h4>
   </ion-text>
 
   <div *ngIf="day_night_select == 'night'">
-    <ion-item *ngFor="let routine of this.data.night_routines; index as i;" lines="none">
-      <ion-checkbox slot="start" [checked]="routine.is_done" (ionChange)="onCheckboxChange(i)"></ion-checkbox>
+    <ion-item
+      *ngFor="let routine of this.data.night_routines; index as i;"
+      lines="none"
+    >
+      <ion-checkbox
+        slot="start"
+        [checked]="routine.is_done"
+        (ionChange)="onCheckboxChange(i)"
+      ></ion-checkbox>
       <ion-label>{{ routine.label }}</ion-label>
     </ion-item>
   </div>
 
   <div *ngIf="day_night_select == 'day'">
-    <ion-item *ngFor="let routine of this.data.day_routines; index as i;" lines="none">
-      <ion-checkbox slot="start" [checked]="routine.is_done" (ionChange)="onCheckboxChange(i)"></ion-checkbox>
+    <ion-item
+      *ngFor="let routine of this.data.day_routines; index as i;"
+      lines="none"
+    >
+      <ion-checkbox
+        slot="start"
+        [checked]="routine.is_done"
+        (ionChange)="onCheckboxChange(i)"
+      ></ion-checkbox>
       <ion-label>{{ routine.label }}</ion-label>
     </ion-item>
   </div>
 
-    <h4 class="text-center text-primary-default">
-      My Self Care Goal
-    </h4>
+  <h4 class="text-center text-primary-default">My Self Care Goal</h4>
 
   <ion-text color="#B7472A">
     <h5 class="text-center mt-2 ml-5 mr-5 mb-10">{{data.routine_goal}}</h5>
   </ion-text>
-
-  
-
 </ion-content>
 
 <ion-modal trigger="open-modal">
   <ng-template>
     <app-routine-edit
-    [data]="data"
-    (cancelChanges)="onCancel()"
-    (saveChanges)="onSave($event)"
+      class="h-full"
+      [data]="data"
+      (cancelChanges)="onCancel()"
+      (saveChanges)="onSave($event)"
     ></app-routine-edit>
   </ng-template>
 </ion-modal>
