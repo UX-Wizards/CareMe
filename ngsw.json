@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1682647911482,
+  "timestamp": 1683231636308,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -36,7 +36,7 @@
         "/4376.0e6a6044471db54d.js",
         "/438.1864b9bad23ae7a9.js",
         "/4432.af03feb5146988e0.js",
-        "/451.122ba680cd05c17a.js",
+        "/451.304d7047a688d826.js",
         "/4651.994b5d05785a6791.js",
         "/4711.1f4d4f93787b19c1.js",
         "/4753.fa791524b818b7f9.js",
@@ -79,8 +79,8 @@
         "/polyfills-core-js.e5d40a25add030b2.js",
         "/polyfills-dom.5c5f23fb57b03028.js",
         "/polyfills.c5a6162cac4767e2.js",
-        "/runtime.7fce7ec944df9f43.js",
-        "/styles.00156577f35e2c33.css"
+        "/runtime.c05d2c1d99204a9c.js",
+        "/styles.f8b5bd59a6adb766.css"
       ],
       "patterns": []
     },
@@ -104,6 +104,14 @@
         "/assets/icons/icon-72x72.png",
         "/assets/icons/icon-96x96.png",
         "/assets/img/careme-sample.png",
+        "/assets/img/hair01.png",
+        "/assets/img/hair02.png",
+        "/assets/img/hair03.png",
+        "/assets/img/hair04.png",
+        "/assets/img/hair05.png",
+        "/assets/img/hair06.png",
+        "/assets/img/hair07.png",
+        "/assets/img/hair08.png",
         "/assets/shapes.svg"
       ],
       "patterns": []
@@ -136,7 +144,7 @@
     "/4376.0e6a6044471db54d.js": "a05e1d04a9fd31f7ee209030c8aac65bca846c65",
     "/438.1864b9bad23ae7a9.js": "c531dbb58fc0fb4e03367674be9f46cfd82419f8",
     "/4432.af03feb5146988e0.js": "6c54e394a97b5a19e2b6b119e5ffa644e94cc60b",
-    "/451.122ba680cd05c17a.js": "a59c3d95e386a0c06dbac00ffc393bb6420de12b",
+    "/451.304d7047a688d826.js": "361eb62c7c1c66404949f1e212ed256c0e4d8195",
     "/4651.994b5d05785a6791.js": "2d603b9652e3cd132e4418336672afdfa663f662",
     "/4711.1f4d4f93787b19c1.js": "04e3009b1b608d56712d04347b66fa3e23935073",
     "/4753.fa791524b818b7f9.js": "ba13ceb29742d0d837af898b8bb8dc160c181f89",
@@ -184,16 +192,24 @@
     "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/assets/img/careme-sample.png": "c84c3719b146b068624cf98fccf798f25d19fae2",
+    "/assets/img/hair01.png": "8a574be800de2b7ef0794aef393cd38c5f2632a9",
+    "/assets/img/hair02.png": "8035d27f865cecee8057a20444c18b8263379921",
+    "/assets/img/hair03.png": "852a0f039f0a14cf952c04d6c36adf92cbd40437",
+    "/assets/img/hair04.png": "740f9fa2c5ca0fa416f72e6c2914648eeb9ff727",
+    "/assets/img/hair05.png": "af2109b7b56f93b0abb35ebded8afa2e79fc8963",
+    "/assets/img/hair06.png": "eccd3fc7133ec4d20854c73176048db3c04e2e71",
+    "/assets/img/hair07.png": "ef4d1005b8663ac806d46d267c36fbbc4a396b6f",
+    "/assets/img/hair08.png": "559b6c3fa2d880d0addd3537c90b2ea2b85a3313",
     "/assets/shapes.svg": "5413e95adabcb2cb639970051f55e0ddb64ace53",
     "/common.77740b50d74cfe0a.js": "d3e82ec3ddbe25875d1def6782582aa1a450c2be",
-    "/index.html": "dd50018db3f2c1bf530aaf668c50e77796c5bb90",
+    "/index.html": "03a19d7bff5d426b6f6a7f9fe536ea47fe3c4b51",
     "/main.cd7cf8ad15bd6810.js": "f0ee580cd5f1490118b29e2ba339759a6bbf9743",
     "/manifest.webmanifest": "046c63bdfb3bb489efcc2caa06fee431796754d6",
     "/polyfills-core-js.e5d40a25add030b2.js": "a10a72fc2c6e6ae4f9e144777c453d4ca706853f",
     "/polyfills-dom.5c5f23fb57b03028.js": "06f5dc30f55bf9a3d9c6f9bca07c0041a6bbdaa0",
     "/polyfills.c5a6162cac4767e2.js": "35ce1cc3005f5c3996e82b395b2fa72de8011bc3",
-    "/runtime.7fce7ec944df9f43.js": "39fd6475fcb7c63615e270baa8db6e171ef5aae2",
-    "/styles.00156577f35e2c33.css": "c06c29372bd352ce3a23f0de8be890b5592d9379"
+    "/runtime.c05d2c1d99204a9c.js": "b5e4fc3e7321d60b8d2e5ac9043a464fda1fd9dc",
+    "/styles.f8b5bd59a6adb766.css": "747e9d564ef0c28a84cf91cb83f15e0bdefbfa92"
   },
   "navigationUrls": [
     {
