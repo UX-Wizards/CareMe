@@ -5,6 +5,11 @@
         class="animate__animated animate__fadeInRight animate__faster text-primary-default" (click)="slidePrev()"><ion-icon
           name="chevron-back-outline"></ion-icon> Back</ion-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="currentIndex && currentIndex == 1"
+        class="animate__animated animate__fadeInRight animate__faster text-primary-default" (click)="slideNext()"> Continue <ion-icon
+          name="chevron-forward-outline"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
