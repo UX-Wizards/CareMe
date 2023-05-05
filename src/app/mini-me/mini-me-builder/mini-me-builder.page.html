@@ -26,7 +26,19 @@
             <div class="text-center" [ngClass]="{'active': currentIndex == 3, 'inactive': currentIndex !== 3}" (click)="slideTo(3)">Eyes</div>
           </ng-template>
           <ng-template swiperSlide>
-            <div class="text-center" [ngClass]="{'active': currentIndex == 4, 'inactive': currentIndex !== 4}" (click)="slideTo(4)">Eye Color</div>
+            <div class="text-center" [ngClass]="{'active': currentIndex == 4, 'inactive': currentIndex !== 4}" (click)="slideTo(4)">Eyebrow</div>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="text-center" [ngClass]="{'active': currentIndex == 5, 'inactive': currentIndex !== 5}" (click)="slideTo(5)">Mouth</div>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="text-center" [ngClass]="{'active': currentIndex == 6, 'inactive': currentIndex !== 6}" (click)="slideTo(6)">Shirt</div>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="text-center" [ngClass]="{'active': currentIndex == 7, 'inactive': currentIndex !== 7}" (click)="slideTo(7)">Shirt Color</div>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="text-right" [ngClass]="{'active': currentIndex == 8, 'inactive': currentIndex !== 8}" (click)="slideTo(8)">Background</div>
           </ng-template>
         </swiper>
       </ion-col>
@@ -74,12 +86,139 @@
         </ng-template>
         <ng-template swiperSlide>
           <!-- Hair Color -->
+          <ion-grid>
+            <ion-row>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-1"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-2"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-3"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-4"></ion-icon></ion-col>
+              
+            </ion-row>
+            <ion-row>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-5"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-6"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-7"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-8"></ion-icon></ion-col>
+              
+            </ion-row>
+
+          </ion-grid>
         </ng-template>
         <ng-template swiperSlide>
           <!-- Eyes -->
+          <ion-grid>
+            <ion-row>
+              <ion-col><ion-img src="./assets/img/eyes1.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/eyes2.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/eyes3.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/eyes4.png"></ion-img></ion-col>
+              
+            </ion-row>
+            <ion-row>
+              <ion-col><ion-img src="./assets/img/eyes5.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/eyes6.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/eyes7.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/eyes8.png"></ion-img></ion-col>
+              
+            </ion-row>
+          </ion-grid>
         </ng-template>
         <ng-template swiperSlide>
-          <!-- Eye Color -->
+          <!-- Eyebrow -->
+          <ion-grid>
+            <ion-row>
+              <ion-col><ion-img src="./assets/img/eyebrow1.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/eyebrow2.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/eyebrow3.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/eyebrow4.png"></ion-img></ion-col>
+              
+            </ion-row>
+            <ion-row>
+              <ion-col><ion-img src="./assets/img/eyebrow5.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/eyebrow6.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/eyebrow7.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/eyebrow8.png"></ion-img></ion-col>
+              
+            </ion-row>
+          </ion-grid>
+        </ng-template>
+        <ng-template swiperSlide>
+          <!-- Mouth -->
+          <ion-grid>
+            <ion-row>
+              <ion-col><ion-img src="./assets/img/mouth1.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/mouth2.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/mouth3.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/mouth4.png"></ion-img></ion-col>
+              
+            </ion-row>
+            <ion-row>
+              <ion-col><ion-img src="./assets/img/mouth5.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/mouth6.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/mouth7.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/mouth8.png"></ion-img></ion-col>
+              
+            </ion-row>
+          </ion-grid>
+        </ng-template>
+        <ng-template swiperSlide>
+          <!-- Shirt -->
+          <ion-grid>
+            <ion-row>
+              <ion-col><ion-img src="./assets/img/shirt1.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/shirt2.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/shirt3.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/shirt4.png"></ion-img></ion-col>
+              
+            </ion-row>
+            <ion-row>
+              <ion-col><ion-img src="./assets/img/shirt5.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/shirt6.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/shirt7.png"></ion-img></ion-col>
+              <ion-col><ion-img src="./assets/img/shirt8.png"></ion-img></ion-col>
+              
+            </ion-row>
+          </ion-grid>
+        </ng-template>
+        <ng-template swiperSlide>
+          <!-- Shirt Color -->
+          <ion-grid>
+            <ion-row>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-1"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-2"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-3"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-4"></ion-icon></ion-col>
+              
+            </ion-row>
+            <ion-row>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-5"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-6"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-7"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-8"></ion-icon></ion-col>
+              
+            </ion-row>
+
+          </ion-grid>
+        </ng-template>
+        <ng-template swiperSlide>
+          <!-- Background Color -->
+          <ion-grid>
+            <ion-row>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 background-1"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 background-2"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 background-3"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 background-4"></ion-icon></ion-col>
+              
+            </ion-row>
+            <ion-row>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 background-5"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 background-6"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 background-7"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 background-8"></ion-icon></ion-col>
+              
+            </ion-row>
+
+          </ion-grid>
         </ng-template>
       </swiper>
     </ion-row>
