@@ -1,14 +1,14 @@
 
 
-<ion-content>
+
   <ion-grid style="height: 100%;">
     <ion-row style="background-color: white; height: 6%;">
       <ion-col><h1 class="text-center">Set Up Mini Me</h1>
         <ion-row style="height: 16px"></ion-row>
       </ion-col>
     </ion-row>
-    <ion-row style="background-color: rgb(241, 241, 241); height: 48%;">
-      <ion-col><ion-img class="ml-[15%] mr-[15%]" src="./assets/avataaars/justina.svg"></ion-img></ion-col>
+    <ion-row style="height: 48%;">
+      <ion-col><ion-img class="ml-[15%] mr-[15%]" [src]="image" [ngClass]="{'animate__animated animate__bounceIn': !animate, 'animate__animated animate__heartBeat': animate}"></ion-img></ion-col>
     </ion-row>
     <ion-row style="background-color: white; height: 6%;">
       <ion-col class="text-center">
@@ -49,16 +49,16 @@
           <!-- Skin Color -->
           <ion-grid>
             <ion-row>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-1"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-2"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-3"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-4"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-2" [ngClass]="{'active-item': avatar.skinColor == 'Yellow'}" (click)="selectSkinColor('Yellow')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-3" [ngClass]="{'active-item': avatar.skinColor == 'Pale'}" (click)="selectSkinColor('Pale')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-4" [ngClass]="{'active-item': avatar.skinColor == 'Light'}" (click)="selectSkinColor('Light')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-5" [ngClass]="{'active-item': avatar.skinColor == 'Brown'}" (click)="selectSkinColor('Brown')"></ion-icon></ion-col>
               
             </ion-row>
             <ion-row>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-5"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-6"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-7"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-1" [ngClass]="{'active-item': avatar.skinColor == 'Tanned'}" (click)="selectSkinColor('Tanned')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-6" [ngClass]="{'active-item': avatar.skinColor == 'DarkBrown'}" (click)="selectSkinColor('DarkBrown')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-7" [ngClass]="{'active-item': avatar.skinColor == 'Black'}" (click)="selectSkinColor('Black')"></ion-icon></ion-col>
               <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-0"></ion-icon></ion-col>
               
             </ion-row>
@@ -231,5 +231,3 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  
-  </ion-content>
