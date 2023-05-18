@@ -9,11 +9,16 @@
     color: #ff0000;
 }
 
-.active-item {
+.active-color {
     -webkit-box-shadow: inset 0px 0px 0px 7px #342d2b;
     -moz-box-shadow: inset 0px 0px 0px 7px #342d2b;
     box-shadow: inset 0px 0px 0px 7px #342d2b;
     border-radius: 35px;
+}
+
+.active-item {
+    border:#000 5px solid;
+    border-radius: 5px;
 }
 
 // SKIN
