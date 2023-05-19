@@ -18,7 +18,7 @@ export class MiniMePage implements OnInit {
   @ViewChild('swiper') swiper?: SwiperComponent
   currentIndex?: number
   imgUrl?: string = 'https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraightStrand&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Blue03&eyeType=Happy&eyebrowType=Default&mouthType=Twinkle&skinColor=Pale'
-  builderImage?: string
+  builderImage?: string = 'https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraightStrand&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=Blue03&eyeType=Happy&eyebrowType=Default&mouthType=Twinkle&skinColor=Pale'
 
   constructor(private navController: NavController,) { }
 
@@ -30,7 +30,6 @@ export class MiniMePage implements OnInit {
     this.currentIndex = this.swiper?.swiperRef.activeIndex
     if (this.currentIndex == 2) {
       this.imgUrl = this.builderImage
-      console.log(this.imgUrl)
     }
   }
 
@@ -41,7 +40,6 @@ export class MiniMePage implements OnInit {
 
   saveAvatar(imgUrl: string) {
     this.builderImage = imgUrl
-    console.log(this.builderImage)
   }
 
 }
