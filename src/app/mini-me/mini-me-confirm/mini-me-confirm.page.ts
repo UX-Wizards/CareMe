@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-mini-me-confirm',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mini-me-confirm.page.scss'],
 })
 export class MiniMeConfirmPage implements OnInit {
-
+  @Input() imgUrl?: string;
   constructor() { }
 
   ngOnInit() {

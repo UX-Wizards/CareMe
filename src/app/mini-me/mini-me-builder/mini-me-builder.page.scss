@@ -1,42 +1,54 @@
 .inactive {
-    color: #8B8482   
+    color: #8b8482;
 }
 .active {
-    color: #342D2B   
+    color: #342d2b;
 }
 
 .hair-1 {
-    color: #FF0000
+    color: #ff0000;
+}
+
+.active-color {
+    -webkit-box-shadow: inset 0px 0px 0px 7px #342d2b;
+    -moz-box-shadow: inset 0px 0px 0px 7px #342d2b;
+    box-shadow: inset 0px 0px 0px 7px #342d2b;
+    border-radius: 35px;
+}
+
+.active-item {
+    border:#000 5px solid;
+    border-radius: 5px;
 }
 
 // SKIN
 
 .skin-1 {
-    color: #FD9841;
+    color: #ef9d53;
 }
 
 .skin-2 {
-    color: #F9D562;
+    color: #f9d562;
 }
 
 .skin-3 {
-    color: #FFDBB4;
+    color: #ffdbb4;
 }
 
 .skin-4 {
-    color: #EDB98A
+    color: #edb98a;
 }
 
 .skin-5 {
-    color: #D08B5B
+    color: #d08b5b;
 }
 
 .skin-6 {
-    color: #AE5D29
+    color: #ae5d29;
 }
 
 .skin-7 {
-    color: #614335
+    color: #614335;
 }
 
 .skin-0 {
@@ -46,103 +58,101 @@
 // HAIR
 
 .hair-1 {
- color: #ECDCBF   
+    color: #ecdcbf;
 }
 
 .hair-2 {
-    color: #D6B370
+    color: #d6b370;
 }
 
 .hair-3 {
-    color: #724133  
-   }
-   
+    color: #724133;
+}
+
 .hair-4 {
-    color: #4A312C
-   }
+    color: #4a312c;
+}
 
 .hair-5 {
- color: #E8E1E1  
+    color: #e8e1e1;
 }
 
 .hair-6 {
-    color: #F59797
+    color: #f59797;
 }
 
 .hair-7 {
-    color: #C93305 
-   }
-   
-.hair-8 {
-    color: #2C1B18
-   }
+    color: #c93305;
+}
 
-   // SHIRT COLOR
+.hair-8 {
+    color: #2c1b18;
+}
+
+// SHIRT COLOR
 
 .shirtcolor-1 {
-    color: #FFFFB1
+    color: #ffffb1;
 }
 
 .shirtcolor-2 {
-    color: #929598
+    color: #929598;
 }
 
 .shirtcolor-3 {
-    color: #3C4F5C
+    color: #3c4f5c;
 }
 
 .shirtcolor-4 {
-    color: #262E33
+    color: #262e33;
 }
 
-
 .shirtcolor-5 {
-    color: #A7FFC4
+    color: #a7ffc4;
 }
 
 .shirtcolor-6 {
-    color: #B1E2FF
+    color: #b1e2ff;
 }
 
 .shirtcolor-7 {
-    color: #5199E4
+    color: #5199e4;
 }
 
 .shirtcolor-8 {
-    color: #FF5C5C
+    color: #ff5c5c;
 }
-
 
 // BACKGROUND COLOR
 
 .background-1 {
-    color: #7FC7FA
+    color: #7fc7fa;
 }
 
 .background-2 {
-    color: #EBE397
+    color: #ebe397;
 }
 
 .background-3 {
-    color: #E89B99
+    color: #e89b99;
 }
 
 .background-4 {
-    color: #C25486
+    color: #c25486;
 }
 
 .background-5 {
-    color: #8B4FCB
+    color: #8b4fcb;
 }
 
 .background-6 {
-    color: #E1564F
+    color: #e1564f;
 }
 
 .background-7 {
-    color: #73CFA5
+    color: #73cfa5;
 }
 
 .background-8 {
-    color: #E0AC67
+    color: #e0ac67;
 }

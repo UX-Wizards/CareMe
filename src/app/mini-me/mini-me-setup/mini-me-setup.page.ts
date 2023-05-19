@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-mini-me-setup',
@@ -7,6 +7,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class MiniMeSetupPage implements OnInit {
   @Output() nextSlide = new EventEmitter<any>()
+  @Input() imgUrl?: string;
   constructor() { }
 
   ngOnInit() {

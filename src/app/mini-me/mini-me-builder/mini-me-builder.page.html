@@ -1,14 +1,14 @@
 
 
-<ion-content>
+
   <ion-grid style="height: 100%;">
     <ion-row style="background-color: white; height: 6%;">
       <ion-col><h1 class="text-center">Set Up Mini Me</h1>
         <ion-row style="height: 16px"></ion-row>
       </ion-col>
     </ion-row>
-    <ion-row style="background-color: rgb(241, 241, 241); height: 48%;">
-      <ion-col><ion-img class="ml-[15%] mr-[15%]" src="./assets/avataaars/justina.svg"></ion-img></ion-col>
+    <ion-row style="height: 48%;">
+      <ion-col><ion-img class="ml-[15%] mr-[15%]" [src]="image" [ngClass]="{'animate__animated animate__bounceIn': !animate, 'animate__animated animate__heartBeat': animate}"></ion-img></ion-col>
     </ion-row>
     <ion-row style="background-color: white; height: 6%;">
       <ion-col class="text-center">
@@ -34,12 +34,12 @@
           <ng-template swiperSlide>
             <div class="text-center" [ngClass]="{'active': currentIndex == 6, 'inactive': currentIndex !== 6}" (click)="slideTo(6)">Shirt</div>
           </ng-template>
-          <ng-template swiperSlide>
+          <ng-template *ngIf="showClotheColor" swiperSlide>
             <div class="text-center" [ngClass]="{'active': currentIndex == 7, 'inactive': currentIndex !== 7}" (click)="slideTo(7)">Shirt Color</div>
           </ng-template>
-          <ng-template swiperSlide>
+          <!--<ng-template swiperSlide>
             <div class="text-right" [ngClass]="{'active': currentIndex == 8, 'inactive': currentIndex !== 8}" (click)="slideTo(8)">Background</div>
-          </ng-template>
+          </ng-template>-->
         </swiper>
       </ion-col>
     </ion-row>
@@ -49,16 +49,16 @@
           <!-- Skin Color -->
           <ion-grid>
             <ion-row>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-1"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-2"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-3"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-4"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-2" [ngClass]="{'active-color': avatar.skinColor == 'Yellow'}" (click)="selectSkinColor('Yellow')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-3" [ngClass]="{'active-color': avatar.skinColor == 'Pale'}" (click)="selectSkinColor('Pale')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-4" [ngClass]="{'active-color': avatar.skinColor == 'Light'}" (click)="selectSkinColor('Light')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-5" [ngClass]="{'active-color': avatar.skinColor == 'Brown'}" (click)="selectSkinColor('Brown')"></ion-icon></ion-col>
               
             </ion-row>
             <ion-row>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-5"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-6"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-7"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-1" [ngClass]="{'active-color': avatar.skinColor == 'Tanned'}" (click)="selectSkinColor('Tanned')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-6" [ngClass]="{'active-color': avatar.skinColor == 'DarkBrown'}" (click)="selectSkinColor('DarkBrown')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-7" [ngClass]="{'active-color': avatar.skinColor == 'Black'}" (click)="selectSkinColor('Black')"></ion-icon></ion-col>
               <ion-col><ion-icon name="ellipse" class="h-16 w-16 skin-0"></ion-icon></ion-col>
               
             </ion-row>
@@ -69,17 +69,17 @@
           <!-- Hair -->
           <ion-grid>
             <ion-row>
-              <ion-col><ion-img src="./assets/img/hair01.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/hair02.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/hair03.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/hair04.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.topType == 'LongHairBigHair'}" (click)="selectTopType('LongHairBigHair')" src="./assets/img/hair01.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.topType == 'LongHairBob'}" (click)="selectTopType('LongHairBob')" src="./assets/img/hair02.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.topType == 'LongHairFro'}" (click)="selectTopType('LongHairFro')" src="./assets/img/hair03.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.topType == 'LongHairStraightStrand'}" (click)="selectTopType('LongHairStraightStrand')" src="./assets/img/hair04.png"></ion-img></ion-col>
               
             </ion-row>
             <ion-row>
-              <ion-col><ion-img src="./assets/img/hair05.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/hair06.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/hair07.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/hair08.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.topType == 'ShortHairShaggyMullet'}" (click)="selectTopType('ShortHairShaggyMullet')" src="./assets/img/hair05.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.topType == 'ShortHairShortFlat'}" (click)="selectTopType('ShortHairShortFlat')" src="./assets/img/hair06.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.topType == 'ShortHairTheCaesar'}" (click)="selectTopType('ShortHairTheCaesar')" src="./assets/img/hair07.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.topType == 'LongHairBun'}" (click)="selectTopType('LongHairBun')" src="./assets/img/hair08.png"></ion-img></ion-col>
               
             </ion-row>
           </ion-grid>
@@ -88,17 +88,17 @@
           <!-- Hair Color -->
           <ion-grid>
             <ion-row>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-1"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-2"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-3"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-4"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-1" [ngClass]="{'active-color': avatar.hairColor == 'Platinum'}" (click)="selectHairColor('Platinum')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-2" [ngClass]="{'active-color': avatar.hairColor == 'BlondeGolden'}" (click)="selectHairColor('BlondeGolden')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-3" [ngClass]="{'active-color': avatar.hairColor == 'Brown'}" (click)="selectHairColor('Brown')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-4" [ngClass]="{'active-color': avatar.hairColor == 'BrownDark'}" (click)="selectHairColor('BrownDark')"></ion-icon></ion-col>
               
             </ion-row>
             <ion-row>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-5"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-6"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-7"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-8"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-5" [ngClass]="{'active-color': avatar.hairColor == 'SilverGray'}" (click)="selectHairColor('SilverGray')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-6" [ngClass]="{'active-color': avatar.hairColor == 'PastelPink'}" (click)="selectHairColor('PastelPink')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-7" [ngClass]="{'active-color': avatar.hairColor == 'Red'}" (click)="selectHairColor('Red')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 hair-8" [ngClass]="{'active-color': avatar.hairColor == 'Black'}" (click)="selectHairColor('Black')"></ion-icon></ion-col>
               
             </ion-row>
 
@@ -108,17 +108,17 @@
           <!-- Eyes -->
           <ion-grid>
             <ion-row>
-              <ion-col><ion-img src="./assets/img/eyes1.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/eyes2.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/eyes3.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/eyes4.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyeType == 'Default'}" (click)="selectEyeType('Default')" src="./assets/img/eyes1.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyeType == 'Happy'}" (click)="selectEyeType('Happy')" src="./assets/img/eyes2.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyeType == 'Wink'}" (click)="selectEyeType('Wink')" src="./assets/img/eyes3.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyeType == 'Cry'}" (click)="selectEyeType('Cry')" src="./assets/img/eyes4.png"></ion-img></ion-col>
               
             </ion-row>
             <ion-row>
-              <ion-col><ion-img src="./assets/img/eyes5.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/eyes6.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/eyes7.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/eyes8.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyeType == 'Side'}" (click)="selectEyeType('Side')" src="./assets/img/eyes5.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyeType == 'WinkWacky'}" (click)="selectEyeType('WinkWacky')" src="./assets/img/eyes6.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyeType == 'Surprised'}" (click)="selectEyeType('Surprised')" src="./assets/img/eyes7.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyeType == 'Hearts'}" (click)="selectEyeType('Hearts')" src="./assets/img/eyes8.png"></ion-img></ion-col>
               
             </ion-row>
           </ion-grid>
@@ -127,18 +127,17 @@
           <!-- Eyebrow -->
           <ion-grid>
             <ion-row>
-              <ion-col><ion-img src="./assets/img/eyebrow1.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/eyebrow2.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/eyebrow3.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/eyebrow4.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyebrowType == 'Default'}" (click)="selectEyebrowType('Default')" src="./assets/img/eyebrow1.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyebrowType == 'DefaultNatural'}" (click)="selectEyebrowType('DefaultNatural')" src="./assets/img/eyebrow2.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyebrowType == 'FlatNatural'}" (click)="selectEyebrowType('FlatNatural')" src="./assets/img/eyebrow3.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyebrowType == 'UnibrowNatural'}" (click)="selectEyebrowType('UnibrowNatural')" src="./assets/img/eyebrow4.png"></ion-img></ion-col>
               
             </ion-row>
             <ion-row>
-              <ion-col><ion-img src="./assets/img/eyebrow5.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/eyebrow6.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/eyebrow7.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/eyebrow8.png"></ion-img></ion-col>
-              
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyebrowType == 'RaisedExcited'}" (click)="selectEyebrowType('RaisedExcited')" src="./assets/img/eyebrow5.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyebrowType == 'RaisedExcitedNatural'}" (click)="selectEyebrowType('RaisedExcitedNatural')" src="./assets/img/eyebrow6.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyebrowType == 'SadConcernedNatural'}" (click)="selectEyebrowType('SadConcernedNatural')" src="./assets/img/eyebrow7.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.eyebrowType == 'UpDown'}" (click)="selectEyebrowType('UpDown')" src="./assets/img/eyebrow8.png"></ion-img></ion-col>
             </ion-row>
           </ion-grid>
         </ng-template>
@@ -146,18 +145,17 @@
           <!-- Mouth -->
           <ion-grid>
             <ion-row>
-              <ion-col><ion-img src="./assets/img/mouth1.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/mouth2.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/mouth3.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/mouth4.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.mouthType == 'Twinkle'}" (click)="selectMouthType('Twinkle')" src="./assets/img/mouth1.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.mouthType == 'Default'}" (click)="selectMouthType('Default')" src="./assets/img/mouth2.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.mouthType == 'Smile'}" (click)="selectMouthType('Smile')" src="./assets/img/mouth3.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.mouthType == 'Tongue'}" (click)="selectMouthType('Tongue')" src="./assets/img/mouth4.png"></ion-img></ion-col>
               
             </ion-row>
             <ion-row>
-              <ion-col><ion-img src="./assets/img/mouth5.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/mouth6.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/mouth7.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/mouth8.png"></ion-img></ion-col>
-              
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.mouthType == 'Eating'}" (click)="selectMouthType('Eating')" src="./assets/img/mouth5.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.mouthType == 'Serious'}" (click)="selectMouthType('Serious')" src="./assets/img/mouth6.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.mouthType == 'Disbelief'}" (click)="selectMouthType('Disbelief')" src="./assets/img/mouth7.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.mouthType == 'Concerned'}" (click)="selectMouthType('Concerned')" src="./assets/img/mouth8.png"></ion-img></ion-col>
             </ion-row>
           </ion-grid>
         </ng-template>
@@ -165,43 +163,43 @@
           <!-- Shirt -->
           <ion-grid>
             <ion-row>
-              <ion-col><ion-img src="./assets/img/shirt1.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/shirt2.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/shirt3.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/shirt4.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.clotheType == 'BlazerShirt'}" (click)="selectClotheType('BlazerShirt')" src="./assets/img/shirt1.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.clotheType == 'BlazerSweater'}" (click)="selectClotheType('BlazerSweater')" src="./assets/img/shirt2.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.clotheType == 'CollarSweater'}" (click)="selectClotheType('CollarSweater')" src="./assets/img/shirt3.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.clotheType == 'ShirtCrewNeck'}" (click)="selectClotheType('ShirtCrewNeck')" src="./assets/img/shirt4.png"></ion-img></ion-col>
               
             </ion-row>
             <ion-row>
-              <ion-col><ion-img src="./assets/img/shirt5.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/shirt6.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/shirt7.png"></ion-img></ion-col>
-              <ion-col><ion-img src="./assets/img/shirt8.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.clotheType == 'ShirtVNeck'}" (click)="selectClotheType('ShirtVNeck')" src="./assets/img/shirt5.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.clotheType == 'ShirtScoopNeck'}" (click)="selectClotheType('ShirtScoopNeck')" src="./assets/img/shirt6.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.clotheType == 'Hoodie'}" (click)="selectClotheType('Hoodie')" src="./assets/img/shirt7.png"></ion-img></ion-col>
+              <ion-col><ion-img [ngClass]="{'active-item': avatar.clotheType == 'Overall'}" (click)="selectClotheType('Overall')" src="./assets/img/shirt8.png"></ion-img></ion-col>
               
             </ion-row>
           </ion-grid>
         </ng-template>
-        <ng-template swiperSlide>
+        <ng-template *ngIf="showClotheColor" swiperSlide>
           <!-- Shirt Color -->
           <ion-grid>
             <ion-row>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-1"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-2"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-3"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-4"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-1" [ngClass]="{'active-color': avatar.clotheColor == 'PastelYellow'}" (click)="selectClotheColor('PastelYellow')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-2" [ngClass]="{'active-color': avatar.clotheColor == 'Gray02'}" (click)="selectClotheColor('Gray02')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-3" [ngClass]="{'active-color': avatar.clotheColor == 'Heather'}" (click)="selectClotheColor('Heather')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-4" [ngClass]="{'active-color': avatar.clotheColor == 'Black'}" (click)="selectClotheColor('Black')"></ion-icon></ion-col>
               
             </ion-row>
             <ion-row>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-5"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-6"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-7"></ion-icon></ion-col>
-              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-8"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-5" [ngClass]="{'active-color': avatar.clotheColor == 'PastelGreen'}" (click)="selectClotheColor('PastelGreen')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-6" [ngClass]="{'active-color': avatar.clotheColor == 'Blue01'}" (click)="selectClotheColor('Blue01')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-7" [ngClass]="{'active-color': avatar.clotheColor == 'Blue02'}" (click)="selectClotheColor('Blue02')"></ion-icon></ion-col>
+              <ion-col><ion-icon name="ellipse" class="h-16 w-16 shirtcolor-8" [ngClass]="{'active-color': avatar.clotheColor == 'Red'}" (click)="selectClotheColor('Red')"></ion-icon></ion-col>
               
             </ion-row>
 
           </ion-grid>
         </ng-template>
-        <ng-template swiperSlide>
-          <!-- Background Color -->
+        <!-- Background Color -->
+        <!--<ng-template swiperSlide>
           <ion-grid>
             <ion-row>
               <ion-col><ion-icon name="ellipse" class="h-16 w-16 background-1"></ion-icon></ion-col>
@@ -219,7 +217,7 @@
             </ion-row>
 
           </ion-grid>
-        </ng-template>
+        </ng-template>-->
       </swiper>
     </ion-row>
     <ion-row style="background-color: white; height: 5%;">
@@ -231,5 +229,3 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  
-  </ion-content>

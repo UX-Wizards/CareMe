@@ -13,19 +13,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content scroll-y="false">
   <swiper #swiper [config]="config">
 
     <ng-template swiperSlide>
-      <app-mini-me-setup (nextSlide)="slideNext()"></app-mini-me-setup>
+      <app-mini-me-setup [imgUrl]="imgUrl" (nextSlide)="slideNext()"></app-mini-me-setup>
     </ng-template>
 
     <ng-template swiperSlide>
-      <app-mini-me-builder (nextSlide)="slideNext()"></app-mini-me-builder>
+      <app-mini-me-builder (nextSlide)="slideNext()" (saveAvatar)="saveAvatar($event)"></app-mini-me-builder>
     </ng-template>
 
     <ng-template swiperSlide>
-      <app-mini-me-confirm></app-mini-me-confirm>
+      <app-mini-me-confirm [imgUrl]="imgUrl"></app-mini-me-confirm>
     </ng-template>
 
   </swiper>
