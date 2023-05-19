@@ -15,24 +15,45 @@
   <div class="px-20 mb-6">
     <ion-segment [scrollable]="true" [(ngModel)]="day_night_select">
       <ion-segment-button value="day">
-        <ion-icon name="sunny-outline"></ion-icon>
+        <ion-icon
+          *ngIf="day_night_select == 'day'"
+          color="primary"
+          name="sunny-outline"
+        ></ion-icon>
+        <ion-icon
+          *ngIf="day_night_select == 'night'"
+          color="light"
+          name="sunny-outline"
+        ></ion-icon>
       </ion-segment-button>
       <ion-segment-button value="night">
-        <ion-icon name="moon-outline"></ion-icon>
+        <ion-icon
+          *ngIf="day_night_select == 'day'"
+          color="light"
+          name="moon-outline"
+        ></ion-icon>
+        <ion-icon
+          *ngIf="day_night_select == 'night'"
+          color="primary"
+          name="moon-outline"
+        ></ion-icon>
       </ion-segment-button>
     </ion-segment>
   </div>
 
-  <div class="pt-4">
-    <h4 class="text-center mb-1">Remind me at</h4>
-
-    <ion-datetime-button datetime="datetime" class="mb-5"></ion-datetime-button>
-    <ion-modal [keepContentsMounted]="true">
-      <ng-template>
-        <ion-datetime id="datetime" presentation="time"></ion-datetime>
-      </ng-template>
-    </ion-modal>
-  </div>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="auto"><span>Remind me at</span></ion-col>
+      <ion-col size="auto"
+        ><ion-datetime-button datetime="datetime"></ion-datetime-button
+      ></ion-col>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime id="datetime" presentation="time"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-row>
+  </ion-grid>
 
   <h4 class="text-center mb-1">Frequency</h4>
 
@@ -62,7 +83,7 @@
       ></ion-input>
     </ion-item>
   </div>
-  
+
   <div *ngIf="day_night_select == 'night'">
     <ion-item *ngFor="let routine of night_routines; index as i;">
       <ion-icon
@@ -80,7 +101,7 @@
 
   <ion-item>
     <ion-icon
-      class="text-primary-default plusbutton"
+      class="text-primary-default"
       name="add-circle-outline"
       slot="start"
       (click)="addRoutine()"
@@ -88,10 +109,14 @@
     <ion-label>Add new self care activity</ion-label>
   </ion-item>
 
-  <h4 class="text-center text-primary-default">My Self Care Goal</h4>
+  <h4 class="text-center text-primary-default pt-8">My Self Care Goal</h4>
   <ion-textarea
-    placeholder="Enter your Self Care Goals here to motivate yourself."
+    label="Outline textarea"
+    labelPlacement="floating"
+    fill="outline"
+    placeholder="Enter your self care goal to stay motivated"
     [clearOnEdit]="true"
+    [autoGrow]="true"
     [(ngModel)]="routine_goal"
   ></ion-textarea>
 </ion-content>
